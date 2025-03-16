@@ -1,0 +1,31 @@
+/mysql dsn格式
+//涉及参数:
+//username   数据库账号
+//password   数据库密码
+//host       数据库连接地址，可以是Ip或者域名
+//port       数据库端口
+//Dbname     数据库名
+username:password@tcp(host:port)/Dbname?charset=utf8&parseTime=True&loc=Local
+
+//填上参数后的例子
+//username = root
+//password = 123456
+//host     = localhost
+//port     = 3306
+//Dbname   = gorm
+//后面K/V键值对参数含义为：
+//  charset=utf8 客户端字符集为utf8
+//  parseTime=true 支持把数据库datetime和date类型转换为golang的time.Time类型
+//  loc=Local 使用系统本地时区
+root:123456@tcp(localhost:3306)/gorm?charset=utf8&parseTime=True&loc=Local
+
+//gorm 设置mysql连接超时参数
+//开发的时候经常需要设置数据库连接超时参数，gorm是通过dsn的timeout参数配置
+//例如，设置10秒后连接超时，timeout=10s
+//下面是完成的例子
+root:123456@tcp(localhost:3306)/gorm?charset=utf8&parseTime=True&loc=Local&timeout=10s
+
+//设置读写超时时间
+// readTimeout - 读超时时间，0代表不限制
+// writeTimeout - 写超时时间，0代表不限制
+root:123456@tcp(localhost:3306)/gorm?charset=utf8&parseTime=True&loc=Local&timeout=10s&readTimeout=30s&writeTimeout=60s
