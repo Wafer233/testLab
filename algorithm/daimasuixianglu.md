@@ -1,8 +1,7 @@
 
 # Algorithm in Daimasuixianglu
 
-Since that  `Daimasuixianglu` hyperlink is toward LeetCode CN, which is not that fast when in Japan, so I make a hyperlink to LeetCode US.
-
+Summrized by Wafer
 ## Quick Link
 [代码随想录](https://programmercarl.com/)
 
